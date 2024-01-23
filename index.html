@@ -455,7 +455,7 @@
                     </div>
                 </div>
     </footer>
-    <div class="backdop">
+    <div class="backdop is-open">
         <div class="modal">
             <button type="button" class="modal-close-btn">
                 <svg class="modal-icon-btn" width="8" height="8">
@@ -500,32 +500,30 @@
                         </svg>
                     </div>
                 </div>
-                <div class="modal-field">
+                <div class="modal-comment">
                     <label for="user-comment" class="modal-lebel">Comment</label>
-                    <div class="modal-input-wrap">
                         <textarea
                         name="user-comment"
                         id="user-comment"
                         class="modal-text"
                         placeholder="Text input"
                         ></textarea>
-                    </div>
                 </div>
-                <div class="modal-field">
+                <div class="modal-check">
                     <input type="checkbox"
-                    name="policy"
-                    id="policy"
+                    name="user-privacy"
+                    id="user-privacy"
                     class="check-input visually-hidden"
                     value="true"
                     >
-                    <label for="policy" class="check-text"
-                        ><span>
+                    <label for="user-privacy" class="check-text"
+                        ><span class="check-icon-span">
                         <svg class="check-icon" width="10" height="8">
                             <use href="./images/icons.svg#icon-click"></use>
                         </svg>
                         </span>
                         I accept the terms and conditions of the
-                        <a href="">Privacy Policy</a></label>
+                        <a class="check-link" href="">Privacy Policy</a></label>
                 </div>
                 <button type="submit" class="form-btn">Send</button>
             </form>

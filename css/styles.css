@@ -641,7 +641,8 @@ margin-bottom: 32px;
     background-color: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;    
+    pointer-events: none; 
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -652,7 +653,7 @@ margin-bottom: 32px;
 
 .modal {
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     flex-shrink: 0;
     border-radius: 4px;
     background: var(--DAIRY, #FCFCFC);
@@ -661,29 +662,45 @@ margin-bottom: 32px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     align-items: center;
     justify-content: center;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
-    margin-left: auto;
+    position: absolute;
+    top: 24px;
+    right: 24px;
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    border: 1px solid 0, 0, 0, 0.10;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     margin-bottom: 24px;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #e7e9fc
 }
 
-.modal-close-btn:active {
+.modal-close-btn:hover {
     background-color: #404BBF;
-    border: transparent;
+    border: none;
     fill: #FFFFFF;
+}
+
+.modal-close-btn:focus {
+    background-color: #404BBF;
+    border: none;
+    fill: #FFFFFF;
+}
+
+.modal-icon-btn {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
@@ -711,7 +728,8 @@ margin-bottom: 32px;
     border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
     background-color: transparent;
     outline: transparent;
-    padding-left: 36px;
+    padding-left: 38px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .modal-input:focus {
@@ -724,18 +742,22 @@ margin-bottom: 32px;
 
 .form-btn {
     color: var(--WHITE, #FFF);
-        text-align: center;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.5;
-        letter-spacing: 0.04em;
-    max-width: 105px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    min-width: 169px;
+    height: 56px;
+    cursor: pointer;
+    border: none;
     padding: 16px 32px;
     border-radius: 4px;
     background: var(--IRIS, #4D5AE5);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     display: block;
     margin: 0 auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .form.btn:hover {
@@ -757,17 +779,35 @@ margin-bottom: 32px;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-comment {
+    margin-bottom: 16px;
 }
 
 .modal-text {
     width: 100%;
-        height: 120px;
-        border-radius: 4px;
-        border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
-        background-color: transparent;
-        outline: transparent;
-        padding: 8px 16px;
-        resize: none;
+    height: 120px;
+    color: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+    border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+    background-color: transparent;
+    outline: transparent;
+    padding: 8px 16px;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.modal-text:hover {
+    border-color: #4D5AE5;
+}
+
+.modal-check {
+    margin-bottom: 24px;
 }
 
 .check-text {
@@ -787,17 +827,20 @@ margin-bottom: 32px;
 .check-text span {
     width: 16px;
     height: 16px;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid #2E2F4266;
     margin-right: 8px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .check-input:checked + .check-text span {
 border: none;
-fill: #FFFFFF;
+fill: #F4F4FD;
 background-color: #404BBF;
 }
