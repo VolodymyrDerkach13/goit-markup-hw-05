@@ -576,8 +576,6 @@ margin-bottom: 32px;
 }
 
 .footer-form {
-    display: flex;
-    gap: 24px;
 }
 
 .footer-input {
@@ -604,6 +602,8 @@ margin-bottom: 32px;
         font-weight: 500;
         line-height: 1.5;
         letter-spacing: 0.02em;
+        display: flex;
+        gap: 24px;
 }
 
 .footer-form-btn {
