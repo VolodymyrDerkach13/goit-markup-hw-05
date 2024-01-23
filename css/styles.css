@@ -806,6 +806,10 @@ margin-bottom: 32px;
     border-color: #4D5AE5;
 }
 
+.modal-text:focus {
+    border-color: #4D5AE5;
+}
+
 .modal-check {
     margin-bottom: 24px;
 }
@@ -824,13 +828,16 @@ margin-bottom: 32px;
     text-decoration: underline;
 }
 
+.check-icon-span {
+    display: inline-flex;
+}
+
 .check-text span {
     width: 16px;
     height: 16px;
     border-radius: 2px;
     border: 1px solid #2E2F4266;
     margin-right: 8px;
-    display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
